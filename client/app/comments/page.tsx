@@ -51,7 +51,6 @@ const CommentsPage = () => {
     };
   }, [router, user]);
 
-
   useEffect(() => {
     if (comments.length > 0) {
       scrollTopRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -62,7 +61,7 @@ const CommentsPage = () => {
     <div className="h-screen w-screen overflow-auto">
       <div className="flex flex-col h-full px-9 overflow-x-hidden">
         <CommentINput />
-        <div className="grow max-h-full flex w-full flex-col overflow-y-hidden">
+        <div className="grow max-h-full flex w-full flex-col overflow-y-hidden pb-4">
           <ScrollableFeed>
             <div
               ref={scrollTopRef}
@@ -83,9 +82,7 @@ const CommentsPage = () => {
                   {/* <em>{new Date(comment.timestamp).getTime().toLocaleString()}</em> */}
                   <p className=" text-[15px]">{comment.comment}</p>
                 </div>
-              ))
-              
-              }
+              ))}
             </div>
           </ScrollableFeed>
         </div>
